@@ -1,0 +1,2 @@
+Main file
+It was written in readme.md in project root directory.
