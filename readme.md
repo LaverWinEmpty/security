@@ -1,6 +1,6 @@
 # Crypter
 
-Written in VS Code
+MD file written in VS Code
 
 ## Features
 
