@@ -2,7 +2,6 @@
 
 const char* Base64::TABLE = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
-// Throw ErrMsg
 int Base64::ToIndex(char ascii)
 {
     if(ascii < '/') {
@@ -94,7 +93,6 @@ std::string Base64::Encode(const std::string& str)
     return result;
 }
 
-// Throw ErrMsg
 std::string Base64::Decode(const std::string& str)
 {
     if(str.size() % 4) {
