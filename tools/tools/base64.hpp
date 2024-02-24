@@ -10,15 +10,25 @@ class Base64
     Base64(Base64&) = delete;
 
 private:
+    static const int8_t ENCODING_TABLE[];
+    static const int8_t DECODING_TABLE[];
+
+public:
     /**
-     * @brief table
+     * @brief use table
+     *
+     * @param  int_fast8_t [in] plain character. converted to 6 bits
+     * @return int_fast8_t encoded character
      */
-    static const char* TABLE;
+    inline static int_fast8_t Encoding(IN int_fast8_t);
 
     /**
-     * @brief ascii to index of table
+     * @brief use table
+     *
+     * @param  int8_t [in] encoded character
+     * @return int_fast8_t encoded character. if not in table, return -1
      */
-    static int ToIndex(IN char ascii);
+    inline static int_fast8_t Decoding(IN int8_t);
 
 public:
     /**
@@ -28,6 +38,8 @@ public:
 
     /**
      * @brief decode
+     *
+     * @throw std::invalid_argument
      */
     static std::string Decode(IN const std::string& str);
 };
